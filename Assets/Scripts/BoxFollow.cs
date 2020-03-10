@@ -11,7 +11,7 @@ public class BoxFollow : MonoBehaviour
     [SerializeField]
     GameObject Bullet;
 
-    public float fireRate;
+    float fireRate = .2f;
     float nextFire;
 
 
@@ -32,10 +32,12 @@ public class BoxFollow : MonoBehaviour
 
     void CheckIfTimeToFire()
     {
+        
         if(Time.time > nextFire)
         {
-            Instantiate(Bullet, transform.position, Quaternion.identity);
+            Instantiate(Bullet.gameObject, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
         }
+
     }
 }

@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         target = GameObject.FindObjectOfType<PlayerMovement>();
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
         rb.velocity = new Vector2 (moveDirection.x, moveDirection.y);
-        Destroy(gameObject, 2f);
+        Destroy(gameObject, 3f);
     }
 
     // Update is called once per frame

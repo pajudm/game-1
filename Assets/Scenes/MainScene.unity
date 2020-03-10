@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  Bullet: {fileID: 0}
+  Bullet: {fileID: 441688671038905279, guid: ed64795127936d346a80568ccbe9293b, type: 3}
 --- !u!212 &1519357615
 SpriteRenderer:
   m_ObjectHideFlags: 0

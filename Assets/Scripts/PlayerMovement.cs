@@ -13,21 +13,24 @@ public class PlayerMovement : MonoBehaviour
 
 	}
 
-	//Update is called once per frame
-	void FixedUpdate()
-	{
-		if(Input.GetKey("w"))
-		{
-			transform.position += transform.TransformDirection(Vector3.up) * Time.deltaTime * movementSpeed; 
-		}else if(Input.GetKey("s")){
-			transform.position -= transform.TransformDirection(Vector3.up) * Time.deltaTime * movementSpeed;
-		}
+    //Update is called once per frame
+    void Update()
+    {
+        Vector2 movement = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-		if(Input.GetKey("a") && !Input.GetKey("d"))
-		{
-			transform.position += transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
-		}else if(Input.GetKey("d") && !Input.GetKey("a")){
-			transform.position -= transform.TransformDirection(Vector3.left) * Time.deltaTime * movementSpeed;
-		}
-	}
+        transform.Translate(movement * movementSpeed * Time.deltaTime);
+
+ 
+        if (movement != Vector2.zero)
+        {
+            Debug.Log("here");
+            float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg - 90;
+            transform.Find("Player Sprite").rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+        }
+        else
+        {
+            Debug.Log("Not here");
+        }
+    }
 }

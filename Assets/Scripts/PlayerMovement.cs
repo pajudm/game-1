@@ -6,11 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
 
 	public float movementSpeed; 
+    public GameObject gameObject;
+
 
 	//Start is called before the first frame update
 	void Start()
 	{
-
 	}
 
     //Update is called once per frame
@@ -23,14 +24,9 @@ public class PlayerMovement : MonoBehaviour
  
         if (movement != Vector2.zero)
         {
-            Debug.Log("here");
             float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg - 90;
             transform.Find("Player Sprite").rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
-        }
-        else
-        {
-            Debug.Log("Not here");
         }
     }
 }

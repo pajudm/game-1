@@ -5,9 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-	public float movementSpeed; 
-    public GameObject gameObject;
-
+	public float movementSpeed;
 
 	//Start is called before the first frame update
 	void Start()
@@ -24,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
  
         if (movement != Vector2.zero)
         {
+            //TODO: Make smoother with orientation on turning
             float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg - 90;
             transform.Find("Player Sprite").rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 

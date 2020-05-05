@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &358295332 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3194930885646049820, guid: 3b68a731f0188b14fbae6732404c089e,
+    type: 3}
+  m_PrefabInstance: {fileID: 3194930887224265861}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,7 +304,7 @@ GameObject:
   - component: {fileID: 1519357614}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -317,6 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   Bullet: {fileID: 441688671038905279, guid: ed64795127936d346a80568ccbe9293b, type: 3}
+  player: {fileID: 358295332}
 --- !u!212 &1519357615
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
+        Quaternion.LookRotation(Vector3.up, Vector3.forward);
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, 3f);

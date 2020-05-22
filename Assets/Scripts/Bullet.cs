@@ -12,15 +12,14 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        Quaternion.LookRotation(Vector3.up, Vector3.forward);
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
+        // rb = GetComponent<Rigidbody2D>();
+        // rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
         Destroy(gameObject, 3f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        rb.velocity = Vector2.up * moveSpeed;
+        transform.position += transform.up * Time.deltaTime * moveSpeed;
     }
 }

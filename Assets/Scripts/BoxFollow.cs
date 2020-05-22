@@ -32,7 +32,7 @@ public class BoxFollow : MonoBehaviour
     {
 
         //Rotation
-        float z = Mathf.Atan2((target.position.y - transform.position.y), (target.position.x - transform.position.x)) * Mathf.Rad2Deg;
+        float z = Mathf.Atan2((target.position.y - transform.position.y), (target.position.x - transform.position.x)) * Mathf.Rad2Deg - 90;
         Quaternion q = Quaternion.AngleAxis(z, Vector3.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * strength);
         // targetRotation = Quaternion.AngleAxis(target.position - transform.position, Vector3.up);

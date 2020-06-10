@@ -22,6 +22,10 @@ public class BoxFollow : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        if (!player)
+        {
+            return;
+        }
         target = player.GetComponent<Transform>();
         nextFire = Time.time;
     }
@@ -29,6 +33,10 @@ public class BoxFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!target)
+        {
+            return;
+        }
 
         //Rotation
         float z = Mathf.Atan2((target.position.y - transform.position.y), (target.position.x - transform.position.x)) * Mathf.Rad2Deg - 90;

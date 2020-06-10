@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
 	public float movementSpeed;
+    Collision col; 
 
 	//Start is called before the first frame update
 	void Start()
@@ -27,5 +28,11 @@ public class PlayerMovement : MonoBehaviour
             transform.Find("Player Sprite").rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
         }
+        
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Destroy(gameObject);
     }
 }

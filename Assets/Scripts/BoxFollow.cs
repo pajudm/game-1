@@ -10,8 +10,6 @@ public class BoxFollow : MonoBehaviour
     // Variables for Box Bullet
     [SerializeField]
     GameObject Bullet;
-    [SerializeField]
-
     GameObject player;
     float fireRate = .2f;
     float nextFire;
@@ -23,6 +21,7 @@ public class BoxFollow : MonoBehaviour
 
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         target = player.GetComponent<Transform>();
         nextFire = Time.time;
     }
